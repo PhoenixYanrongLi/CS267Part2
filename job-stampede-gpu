@@ -3,7 +3,7 @@
 #SBATCH -o gpu.%j.out       	# output and error file name (%j expands to jobID)
 #SBATCH -n 1             	# total number of mpi tasks requested
 #SBATCH -p gpu     		# queue (partition) -- can use gpu or gpudev
-#SBATCH -t 00:05:00        	# run time (hh:mm:ss) - 10 minutes
+#SBATCH -t 00:10:00        	# run time (hh:mm:ss) - 10 minutes
 
 
 ibrun ./gpu -n 500 -o gpu.txt
@@ -12,4 +12,11 @@ ibrun ./gpu -n 2000 -o gpu.txt
 ibrun ./gpu -n 3000 -o gpu.txt
 ibrun ./gpu -n 6000 -o gpu.txt
 ibrun ./gpu -n 12000 -o gpu.txt             
+
+ibrun ./gpu -n 20000 -o gpu.txt             
+ibrun ./gpu -n 30000 -o gpu.txt             
+ibrun ./gpu -n 50000 -o gpu.txt             
+ibrun ./gpu -n 100000 -o gpu.txt             
+#ibrun ./gpu -n 12000 -o gpu.txt             
+
 #./autocorrect -s gpu.txt

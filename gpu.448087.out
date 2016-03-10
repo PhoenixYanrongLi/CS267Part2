@@ -1,0 +1,42 @@
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000835 seconds
+n = 500, simulation time = 0.322778 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 8.1e-05 seconds
+n = 1000, simulation time = 0.573288 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000136 seconds
+n = 2000, simulation time = 1.07517 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000173 seconds
+n = 3000, simulation time = 1.56675 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000307 seconds
+n = 6000, simulation time = 3.14552 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448087
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000311 seconds
+n = 12000, simulation time = 6.55079 seconds
+ 
+TACC: Shutdown complete. Exiting.

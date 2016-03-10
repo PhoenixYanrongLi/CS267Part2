@@ -3,7 +3,15 @@
 #SBATCH -o serial.%j.out       	# output and error file name (%j expands to jobID)
 #SBATCH -n 1             	# total number of mpi tasks requested
 #SBATCH -p gpu     		# queue (partition) -- can use gpu or gpudev
-#SBATCH -t 00:02:00        	# run time (hh:mm:ss) - 10 minutes
+#SBATCH -t 00:10:00        	# run time (hh:mm:ss) - 10 minutes
 
+
+ibrun ./serial -n 500 -o serial.txt             
+
+ibrun ./serial -n 1000 -o serial.txt             
 ibrun ./serial -n 2000 -o serial.txt             
-./autocorrect -s serial.txt
+ibrun ./serial -n 3000 -o serial.txt             
+ibrun ./serial -n 6000 -o serial.txt             
+ibrun ./serial -n 12000 -o serial.txt             
+#ibrun ./serial -n 2000 -o serial.txt             
+#./autocorrect -s serial.txt

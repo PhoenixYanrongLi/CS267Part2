@@ -1,0 +1,68 @@
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 8.7e-05 seconds
+n = 500, simulation time = 0.414336 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 6.7e-05 seconds
+n = 1000, simulation time = 0.751134 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000123 seconds
+n = 2000, simulation time = 1.44909 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000104 seconds
+n = 3000, simulation time = 2.13953 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000165 seconds
+n = 6000, simulation time = 4.2386 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000283 seconds
+n = 12000, simulation time = 8.80621 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000441 seconds
+n = 20000, simulation time = 15.6803 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000521 seconds
+n = 30000, simulation time = 45.1018 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000822 seconds
+n = 50000, simulation time = 119.096 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448134
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+slurmstepd: *** JOB 448134 CANCELLED AT 2016-03-10T17:09:56 DUE TO TIME LIMIT on c224-502 ***
+[c224-502.maverick.tacc.utexas.edu:mpirun_rsh][signal_processor] Caught signal 15, killing job

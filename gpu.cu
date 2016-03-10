@@ -141,7 +141,7 @@ int main( int argc, char **argv )
         //  save if necessary
         //
         if( fsave && (step%SAVEFREQ) == 0 ) {
-	    // Copy the particles back to the CPU
+	  //  Copy the particles back to the CPU
             cudaMemcpy(particles, d_particles, n * sizeof(particle_t), cudaMemcpyDeviceToHost);
             save( fsave, n, particles);
 	}

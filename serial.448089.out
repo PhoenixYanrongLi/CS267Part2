@@ -1,0 +1,36 @@
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 500, simulation time = 0.759401 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 1000, simulation time = 2.96175 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 2000, simulation time = 11.6558 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 3000, simulation time = 26.3379 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 6000, simulation time = 106.024 seconds
+ 
+TACC: Shutdown complete. Exiting.
+TACC: Starting up job 448089
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+n = 12000, simulation time = 426.173 seconds
+ 
+TACC: Shutdown complete. Exiting.
