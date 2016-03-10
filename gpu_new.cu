@@ -10,7 +10,7 @@
 #define density 0.0005
 #define mass    0.01
 #define cutoff  0.01
-#define min_r   (cut_off/100)
+#define min_r   (cutoff/100)
 #define dt      0.0005
 #define binParticleMax  20
 
@@ -27,7 +27,7 @@ struct direction
     int y_change;
 };
 
-direction Directions[] = {{-1,-1},{0,-1},{1,-1},{-1,0},{0,0},{1,0},{-1,1},{0,1},{1,1}};
+__device__ direction Directions[] = {{-1,-1},{0,-1},{1,-1},{-1,0},{0,0},{1,0},{-1,1},{0,1},{1,1}};
 
 
 __device__ void apply_force_gpu(particle_t &particle, particle_t &neighbor)
@@ -50,8 +50,7 @@ __device__ void apply_force_gpu(particle_t &particle, particle_t &neighbor)
 
 }
 
-__global__ void distribute_particles_gpu (particle_t* particles, particle_t** bins, 
-                                   int binNumPerEdge, int* binParticleNum, int n) {
+__global__ void distribute_particles_gpu (particle_t* particles, particle_t** bins, int binNumPerEdge, int* binParticleNum, int n) {
     //get rid of the outer for loop
     int tid = threadIdx.x + blockIdx.x * blockDim.x;
     if (tid >= n) return;
@@ -65,17 +64,7 @@ __global__ void distribute_particles_gpu (particle_t* particles, particle_t** bi
     bins[binParticleMax * binIndex + particleIdxInBin] = particles + tid; 
 }
 
-__global__ void apply_force_per_bin_gpu (particle_t** bins, int binNumPerEdge, int* binParticleNum) {
-    int tid = threadIdx.x + blockIdx.x * blockDim.x;
-    if (tid >= binNumPerEdge * binNumPerEdge) return;
-
-    for (int i = 0; i < binParticleNum[tid]; i++) {
-      apply_force_per_particle_gpu(*(bins[tid * binParticleMax + i]), bins, tid, binNumPerEdge, binParticleNum);
-    }
-}
-
-__device__ void apply_force_particle_bin_gpu (particle_t &particle, particle_t** bins, int binIdx,
-                                              int binNumPerEdge, int* binParticleNum) {
+__device__ void apply_force_per_particle_gpu (particle_t &particle, particle_t** bins, int binIdx, int binNumPerEdge, int* binParticleNum) {
     particle.ax = particle.ay = 0;
 
     int bin_x = binIdx % binNumPerEdge;
@@ -94,6 +83,16 @@ __device__ void apply_force_particle_bin_gpu (particle_t &particle, particle_t**
                 apply_force_gpu(particle, *(bins[binIdx_new * binParticleMax + j]));
             }
         }
+    }
+}
+
+
+__global__ void apply_force_per_bin_gpu (particle_t** bins, int binNumPerEdge, int* binParticleNum) {
+    int tid = threadIdx.x + blockIdx.x * blockDim.x;
+    if (tid >= binNumPerEdge * binNumPerEdge) return;
+
+    for (int i = 0; i < binParticleNum[tid]; i++) {
+      apply_force_per_particle_gpu(*(bins[tid * binParticleMax + i]), bins, tid, binNumPerEdge, binParticleNum);
     }
 }
 
@@ -208,11 +207,11 @@ int main( int argc, char **argv )
         //  compute forces
         //
         //compute_forces_bin_gpu <<< bin_blks, NUM_THREADS >>> (d_bins, num_particles_in_bins, n_bins_per_side, n_max_particles_per_bin);
-        apply_force_per_bin_gpu <<< blksBin, NUM_THREADS >>> (d_bins, binNumPerEdge, binParticleNum)
+        apply_force_per_bin_gpu <<< blksBin, NUM_THREADS >>> (d_bins, binNumPerEdge, binParticleNum);
         //
         //  move particles
         //
-        move_gpu <<< blks, NUM_THREADS >>> (d_particles, n, gridSize);
+        move_gpu <<< blksParticle, NUM_THREADS >>> (d_particles, n, gridSize);
         
         //
         //  save if necessary

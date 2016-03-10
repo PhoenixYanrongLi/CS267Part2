@@ -1,0 +1,8 @@
+TACC: Starting up job 6708653
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+CPU-GPU copy time = 0.000121 seconds
+n = 2000, simulation time = 0.214776 seconds
+ 
+TACC: Shutdown complete. Exiting.
+/tmp/slurmd/job6708653/slurm_script: line 9: ./autocorrect: Permission denied
